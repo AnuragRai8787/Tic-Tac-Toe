@@ -1,0 +1,132 @@
+:root {
+  --bg:#0f172a;
+  --card:rgba(255,255,255,0.08);
+  --text:#ffffff;
+  --accent:#38bdf8;
+  --win:#22c55e;
+  --draw:#f59e0b;
+}
+
+body.light {
+  --bg:#f1f5f9;
+  --card:#ffffff;
+  --text:#0f172a;
+  --accent:#0284c7;
+  --win:#16a34a;
+  --draw:#d97706;
+}
+
+body {
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position:absolute;
+  top:20px;
+  right:20px;
+  cursor:pointer;
+  font-size:20px;
+}
+
+/* Layout */
+.container {
+  text-align:center;
+}
+
+/* Board */
+.board {
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(3,110px);
+  gap:10px;
+  margin-top:20px;
+}
+
+.cell {
+  width:110px;
+  height:110px;
+  background:var(--card);
+  border-radius:12px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:2.6rem;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.cell:hover {
+  transform:scale(1.05);
+}
+
+/* Win line */
+.line {
+  position:absolute;
+  height:6px;
+  background:#f43f5e;
+  transform-origin:left center;
+  transform:scaleX(0);
+  transition:0.4s ease;
+}
+
+/* Modal */
+.modal {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hidden {
+  display:none;
+}
+
+.modal-card {
+  background:var(--card);
+  color:var(--text);
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  animation:pop 0.25s ease;
+}
+
+/* Result text */
+#resultText {
+  font-size:1.6rem;
+  font-weight:600;
+}
+
+.win-text {
+  color:var(--win);
+}
+
+.draw-text {
+  color:var(--draw);
+}
+
+/* Buttons */
+button {
+  margin:8px;
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:var(--accent);
+  color:white;
+  cursor:pointer;
+}
+
+/* Animation */
+@keyframes pop {
+  from { transform:scale(0.9); opacity:0; }
+  to { transform:scale(1); opacity:1; }
+}

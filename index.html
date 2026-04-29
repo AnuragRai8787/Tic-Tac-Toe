@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tic Tac Toe Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🌗 Theme Toggle -->
+<div id="themeToggle" class="theme-toggle">🌙</div>
+
+<div class="container">
+  <h1>Tic Tac Toe</h1>
+  <div id="status">Choose a mode</div>
+
+  <div class="board">
+    <div class="line" id="line"></div>
+    <div class="cell" data-i="0"></div>
+    <div class="cell" data-i="1"></div>
+    <div class="cell" data-i="2"></div>
+    <div class="cell" data-i="3"></div>
+    <div class="cell" data-i="4"></div>
+    <div class="cell" data-i="5"></div>
+    <div class="cell" data-i="6"></div>
+    <div class="cell" data-i="7"></div>
+    <div class="cell" data-i="8"></div>
+  </div>
+</div>
+
+<!-- 🎮 Mode Selection -->
+<div id="modeModal" class="modal active">
+  <div class="modal-card">
+    <h2>Select Game Mode</h2>
+    <button onclick="startGame(false)">👥 2 Player</button>
+    <button onclick="startGame(true)">🤖 Play vs Bot</button>
+  </div>
+</div>
+
+<!-- 🎉 Result Modal -->
+<div id="resultModal" class="modal hidden">
+  <div class="modal-card">
+    <h2 id="resultText"></h2>
+    <button onclick="resetGame()">Play Again</button>
+    <button onclick="openMode()">Change Mode</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
